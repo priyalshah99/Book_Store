@@ -1,0 +1,5 @@
+package org.models.dto;
+
+public class Address {
+
+}

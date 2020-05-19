@@ -1,0 +1,5 @@
+package org.book_webapp.hibernate;
+
+public class BookDetailsMain {
+
+}

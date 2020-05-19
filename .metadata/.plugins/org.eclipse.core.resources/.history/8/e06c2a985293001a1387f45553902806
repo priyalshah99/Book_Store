@@ -1,0 +1,133 @@
+package org.Services.hibernate;
+
+import java.util.Date;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+import org.models.dto.Address;
+import org.models.dto.Book;
+import org.models.dto.Customer;
+import org.models.dto.OrderDetails;
+import org.models.dto.OrderShippingDetails;
+import org.models.dto.ShippingCompany;
+import org.models.dto.ShippingCompanyPins;
+
+
+public class Hibernate {
+
+	public static void main(String[] args) {
+		
+//		ShippingCompany sc=new ShippingCompany();
+//		sc.setShippingCompanyName("Bluedart");
+//		sc.setContactPersonName("Sanyam Patel");
+//		sc.setContactPersonPhone(741258963);
+//		sc.setContactPersonEmail("bluedart@gmail.com");
+//		
+//		ShippingCompanyPins scp1=new ShippingCompanyPins();
+//		ShippingCompanyPins scp2=new ShippingCompanyPins();
+//		
+//		
+//		scp1.setPins(380015);
+//		scp2.setPins(380018);
+//		
+//		sc.getScp().add(scp1);
+//		sc.getScp().add(scp2);
+//		
+//		scp1.setSc(sc);
+//		scp2.setSc(sc);
+//		
+//		OrderShippingDetails osd1=new OrderShippingDetails();
+//		osd1.setOrderNo(12);
+//		osd1.setDeliveryDate(new Date());
+//		osd1.setShippingDate(new Date());
+//		
+//		OrderShippingDetails osd2=new OrderShippingDetails();
+//		osd2.setOrderNo(25);
+//		osd2.setDeliveryDate(new Date());
+//		osd2.setShippingDate(new Date());
+//		
+//		sc.getOsd().add(osd1);
+//		sc.getOsd().add(osd2);
+//		
+//		osd1.setSc(sc);
+//		osd2.setSc(sc);
+		
+		Customer cust=new Customer();
+		cust.setCustName("shine");
+		
+		Address a=new Address();
+		a.setCity("abad");
+		a.setPin(380015);
+		a.setState("guju");
+		a.setStreet("ambawadi");
+		
+		Customer cust=new Customer();
+		cust.setCustName("shine");
+		cust.setEmail("shine@gmail.com");
+		cust.setAddress(a);
+		
+		Customer cust1=new Customer();
+		cust.setCustName("dark");
+		cust.setEmail("dark@gmail.com");
+		cust.setAddress(a);
+		
+		OrderDetails o=new OrderDetails();
+		o.setOrderNo(123);
+		o.setCustomer(cust);
+		o.setDate(new Date());
+		o.setDiscount(200);
+		o.setTotalBillAmount(2000);
+		
+//		OrderDetails o2=new OrderDetails();
+//		o2.setOrderNo(3);
+//		o2.setCustomer(cust1);
+//		o2.setDate(new Date());
+//		o2.setDiscount(600);
+//		o2.setTotalBillAmount(8000);
+		
+		Book b1=new Book();
+		b1.setIsbn(1234567);
+		b1.setTitle("tom");
+		b1.setAuthors("jrgn");
+		b1.setPrice(350);
+		b1.setStock(20);
+		
+		Book b2=new Book();
+		b2.setIsbn(123567);
+		b2.setTitle("jerry");
+		b2.setAuthors("shw");
+		b2.setPrice(750);
+		b2.setStock(10);
+		
+		
+		o.getBook().add(b1);
+		o.getBook().add(b2);
+		
+		
+		
+		
+		
+		b1.setOrder(o);
+		b2.setOrder(o);
+		
+		
+
+		
+		SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+		Session session = sessionFactory.openSession();
+		session.beginTransaction();
+		session.save(cust);
+		session.save(cust1);
+		
+		session.save(o);
+	//	session.save(o2);
+		session.save(b1);
+		session.save(b2);		
+		 // session.save(b2);
+
+		session.getTransaction().commit();
+		session.close();
+	}
+
+}

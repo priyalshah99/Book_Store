@@ -1,0 +1,20 @@
+package org.models.dto;
+
+import java.util.Date;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
+public class Order {
+	
+	@Id
+	private int orderNo ;
+	private String custName;
+	private Date date;
+	private int isbn;
+	private float totalBillAmount;
+	private float shippingAmount;
+	private int discount;
+	
+}

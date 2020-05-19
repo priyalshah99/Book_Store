@@ -1,0 +1,12 @@
+package org.book_webapp.dto;
+
+public class BookDetails {
+
+	private int ISBN; 
+	private String Title; 
+	private String Authors; 
+	private float Price; 
+	private int Year; 
+	private String Publisher; 
+	private int Stock ;
+}

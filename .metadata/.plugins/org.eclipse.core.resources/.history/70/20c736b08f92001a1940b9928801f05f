@@ -1,0 +1,36 @@
+package org.book_webapp.dto;
+import java.util.ArrayList;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+	@Entity
+	public class Book {
+
+		@Id
+		private int ISBN; 
+		private String Title; 
+		public Collection <String> Authors =new ArrayList<String>();
+		private int Price;
+		private int Year;
+		private String Publisher;
+		private int Stock;
+		
+		public int getISBN() {
+			return ISBN;
+		}
+		public void setISBN(int iSBN) {
+			ISBN = iSBN;
+		}
+		public String getTitle() {
+			return Title;
+		}
+		public void setTitle(String title) {
+			Title = title;
+		}
+			}
+		
+		
+
+
+

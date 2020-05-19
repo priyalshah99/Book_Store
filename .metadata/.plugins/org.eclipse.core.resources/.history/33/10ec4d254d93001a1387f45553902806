@@ -1,0 +1,21 @@
+package org.models.dto;
+
+import javax.persistence.Id;
+
+@Entity
+public class OrderDetails {
+
+	@Id
+	private int orderNo;
+	private String custName;
+	
+	
+//	private Date date;
+//	
+//	//@OneToMany
+//	//private Collection<Book> book = new ArrayList <Book>();
+//	
+//	private float totalBillAmount;
+//	private float shippingAmount;
+//	private int discount;
+}

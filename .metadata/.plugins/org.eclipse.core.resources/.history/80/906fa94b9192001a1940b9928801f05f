@@ -1,0 +1,31 @@
+package org.models.dto;
+
+import java.util.ArrayList;
+import java.util.Collection;
+
+public class Customer {
+	private String Cust_Name;
+	private String Email;
+	private Collection <Addresses> Address =new ArrayList<Addresses>();
+	
+	public String getCust_Name() {
+		return Cust_Name;
+	}
+	public void setCust_Name(String cust_Name) {
+		Cust_Name = cust_Name;
+	}
+	public String getEmail() {
+		return Email;
+	}
+	public void setEmail(String email) {
+		Email = email;
+	}
+	public Collection<Addresses> getAddress() {
+		return Address;
+	}
+	public void setAddress(Collection<Addresses> address) {
+		Address = address;
+	}
+	
+	
+}

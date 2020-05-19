@@ -1,0 +1,10 @@
+package org.models.dto;
+
+public class ShippingCompany {
+	
+	private String SCName;
+	private String ContactPersonName;
+	private int ContactPersonPhone;
+	private String ContactPersonEmail;
+
+}

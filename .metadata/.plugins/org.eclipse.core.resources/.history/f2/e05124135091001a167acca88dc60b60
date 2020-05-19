@@ -1,0 +1,18 @@
+package org.book_webapp.hibernate;
+
+import org.book_webapp.dto.BookDetails;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+public class BookDetailsMain {
+
+	public static void main(String[] args) {
+
+		BookDetails b1= new BookDetails();
+		b1.setISBN(123456789);
+		b1.setTitle(" TomSawyer");
+		
+		SessionFactory sessionFactory=new Configuration().configure().buildSessionFactory();
+	}
+
+}

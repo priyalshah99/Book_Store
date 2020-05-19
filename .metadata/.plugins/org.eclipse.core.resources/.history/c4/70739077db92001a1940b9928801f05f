@@ -1,0 +1,33 @@
+package org.models.dto;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+@Entity
+public class ShippingCompanyPins {
+
+	
+	//private String shippingCompanyName;
+	private int pins;
+	@Id
+	@ManyToOne
+	@JoinColumn(name="shippingCompanyName")
+	private ShippingCompany sc;
+	
+	
+	public int getPins() {
+		return pins;
+	}
+	public void setPins(int pins) {
+		this.pins = pins;
+	}
+	public ShippingCompany getSc() {
+		return sc;
+	}
+	public void setSc(ShippingCompany sc) {
+		this.sc = sc;
+	}
+	
+	
+}
