@@ -1,0 +1,21 @@
+CREATE TABLE public.orderdetails
+(
+    orderno integer NOT NULL,
+    date timestamp without time zone,
+    discount integer NOT NULL,
+    shippingamount real NOT NULL,
+    totalbillamount real NOT NULL,
+    email character varying(255) COLLATE pg_catalog."default",
+    CONSTRAINT orderdetails_pkey PRIMARY KEY (orderno),
+    CONSTRAINT fk_gbmturvpsk9aiir0otnmo99ng FOREIGN KEY (email)
+        REFERENCES public.customer (email) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.orderdetails
+    OWNER to postgres;

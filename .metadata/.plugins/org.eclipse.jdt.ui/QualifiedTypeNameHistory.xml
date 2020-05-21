@@ -25,14 +25,17 @@
 <fullyQualifiedTypeName name="javax.persistence.OneToOne"/>
 <fullyQualifiedTypeName name="org.models.dto.Customer"/>
 <fullyQualifiedTypeName name="javax.persistence.JoinColumn"/>
-<fullyQualifiedTypeName name="org.models.dto.OrderShippingDetails"/>
 <fullyQualifiedTypeName name="javax.persistence.FetchType"/>
-<fullyQualifiedTypeName name="javax.persistence.PrimaryKeyJoinColumn"/>
-<fullyQualifiedTypeName name="javax.persistence.CascadeType"/>
 <fullyQualifiedTypeName name="javax.persistence.MapsId"/>
 <fullyQualifiedTypeName name="javax.persistence.Inheritance"/>
 <fullyQualifiedTypeName name="javax.persistence.InheritanceType"/>
 <fullyQualifiedTypeName name="java.util.Collection"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="javax.persistence.ManyToMany"/>
+<fullyQualifiedTypeName name="org.models.dto.OrderShippingDetails"/>
+<fullyQualifiedTypeName name="javax.persistence.PrimaryKeyJoinColumn"/>
+<fullyQualifiedTypeName name="javax.persistence.CascadeType"/>
+<fullyQualifiedTypeName name="javax.persistence.GeneratedValue"/>
+<fullyQualifiedTypeName name="javax.persistence.SequenceGenerator"/>
+<fullyQualifiedTypeName name="javax.persistence.GenerationType"/>
 </qualifiedTypeNameHistroy>

@@ -15,15 +15,23 @@ import org.models.dto.ShippingCompanyPins;
 
 
 public class Hibernate {
-
+	
+	@SuppressWarnings("unchecked")
 	public static void main(String[] args) {
 		
-//		ShippingCompany sc=new ShippingCompany();
-//		sc.setShippingCompanyName("Bluedart");
-//		sc.setContactPersonName("Sanyam Patel");
-//		sc.setContactPersonPhone(741258963);
-//		sc.setContactPersonEmail("bluedart@gmail.com");
-//		
+		
+		SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+		Session session = sessionFactory.openSession();
+		session.beginTransaction();
+		
+		ShippingCompany sc=new ShippingCompany();
+		sc.setShippingCompanyName("Bluedart");
+		sc.setContactPersonName("Sanyam Patel");
+		sc.setContactPersonPhone(999999999);
+		sc.setContactPersonEmail("bluedart@gmail.com");
+		
+		session.save(sc);
+		
 //		ShippingCompanyPins scp1=new ShippingCompanyPins();
 //		ShippingCompanyPins scp2=new ShippingCompanyPins();
 //		
@@ -59,8 +67,8 @@ public class Hibernate {
 		
 		
 		Customer cust1=new Customer();
-		cust1.setCustName("rame");
-		cust1.setEmail("shine@gmail.com");
+		cust1.setCustName("shalmali");
+		cust1.setEmail("sshalmali@gmail.com");
 		
 		
 		
@@ -77,36 +85,64 @@ public class Hibernate {
 		
 		
 		
+		session.save(cust);
+		session.save(cust1);
+		
+		
+		
 		OrderDetails o=new OrderDetails();
-		o.setOrderNo(123);
+		
 		o.setCustomer(cust);
 		o.setDate(new Date());
 		o.setDiscount(200);
 		o.setTotalBillAmount(2000);
 		
 		OrderDetails o2=new OrderDetails();
-		o2.setOrderNo(3);
+		
 		o2.setCustomer(cust1);
 		o2.setDate(new Date());
 		o2.setDiscount(600);
 		o2.setTotalBillAmount(8000);
 		
+		session.persist(o);
+		session.persist(o2);
+		
+		OrderShippingDetails osd=new OrderShippingDetails();
+//		osd.setOrderDetails(o);
+		osd.setSc(sc);
+		osd.setDeliveryDate(new Date());
+		osd.setShippingDate(new Date());
+		osd.setOrderNo(o.getOrderNo());
+		
+		OrderShippingDetails osd2=new OrderShippingDetails();
+//		osd.setOrderDetails(o);
+		osd2.setSc(sc);
+		osd2.setDeliveryDate(new Date());
+		osd2.setShippingDate(new Date());
+		osd2.setOrderNo(o2.getOrderNo());
+		o.setOsd(osd);
+		o2.setOsd(osd2);
+		
+		
+		session.save(o);
+		session.save(o2);
+		
 		Book b1=new Book();
-		b1.setIsbn(1234567);
+		b1.setIsbn("12567");
 		b1.setTitle("tom");
 		b1.setAuthors("jrgn");
 		b1.setPrice(350);
 		b1.setStock(20);
 		
 		Book b2=new Book();
-		b2.setIsbn(123567);
+		b2.setIsbn("567");
 		b2.setTitle("jerry");
 		b2.setAuthors("shw");
 		b2.setPrice(750);
 		b2.setStock(10);
 		
 		Book b3=new Book();
-		b3.setIsbn(785);
+		b3.setIsbn("5");
 		b3.setTitle("jy");
 		b3.setAuthors("shw");
 		b3.setPrice(750);
@@ -114,7 +150,7 @@ public class Hibernate {
 		
 		
 		
-		//o.getBook().add(b1);
+		
 		o.getBook().add(b2);
 		
 		o2.getBook().add(b1);
@@ -132,11 +168,7 @@ public class Hibernate {
 //		b2.setOrder(o);
 //		
 //		
-//		OrderShippingDetails osd=new OrderShippingDetails();
-//		osd.setOrderDetails(o);
-//		osd.setSc(sc);
-//		osd.setDeliveryDate(new Date());
-//		osd.setShippingDate(new Date());
+		
 //		
 //		
 //		sc.getOsd().add(osd);
@@ -149,14 +181,12 @@ public class Hibernate {
 		
 
 		
-		SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
-		Session session = sessionFactory.openSession();
-		session.beginTransaction();
-		session.save(cust);
-		session.save(cust1);
-//		session.save(sc);
-		session.save(o);
-		session.save(o2);
+		
+		
+		
+		
+	
+		
 		session.save(b1);
 		session.save(b2);
 		session.save(b3);

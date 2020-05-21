@@ -1,0 +1,18 @@
+CREATE TABLE public.customer
+(
+    email character varying(255) COLLATE pg_catalog."default" NOT NULL,
+    city character varying(255) COLLATE pg_catalog."default",
+    pin integer NOT NULL,
+    state character varying(255) COLLATE pg_catalog."default",
+    street character varying(255) COLLATE pg_catalog."default",
+    custname character varying(255) COLLATE pg_catalog."default",
+    custphone bigint NOT NULL,
+    CONSTRAINT customer_pkey PRIMARY KEY (email)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.customer
+    OWNER to postgres;

@@ -1,0 +1,17 @@
+CREATE TABLE public.shippingcompanypins
+(
+    pins integer NOT NULL,
+    shippingcompanyname character varying(255) COLLATE pg_catalog."default",
+    CONSTRAINT shippingcompanypins_pkey PRIMARY KEY (pins),
+    CONSTRAINT fk_fylm0m8qgkuc40og010jjl3v8 FOREIGN KEY (shippingcompanyname)
+        REFERENCES public.shippingcompany (shippingcompanyname) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.shippingcompanypins
+    OWNER to postgres;

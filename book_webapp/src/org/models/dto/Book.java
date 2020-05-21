@@ -5,31 +5,27 @@ import java.util.Collection;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
+
 import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
 
 @Entity
 public class Book {
 	
 			@Id
-			private int isbn; 
+			private String isbn; 
 			private String title; 
 			private String authors ;
 			private float price;
 			private int year;
 			private String publisher;
 			private int stock;
+			private String bookCover;
+			private String genre;
+			private String language;
+			private String description;
 			
-			@ManyToMany
-			private Collection <OrderDetails> order=new ArrayList <OrderDetails>();
 			
-			public int getIsbn() {
-				return isbn;
-			}
-			public void setIsbn(int isbn) {
-				this.isbn = isbn;
-			}
+		
 			public String getTitle() {
 				return title;
 			}
@@ -66,15 +62,36 @@ public class Book {
 			public void setStock(int stock) {
 				this.stock = stock;
 			}
-	/*
-	 * public Order getOrder() { return order; } public void setOrder(Order order) {
-	 * this.order = order; }
-	 */
-			public Collection<OrderDetails> getOrder() {
-				return order;
+	
+			public String getBookCover() {
+				return bookCover;
 			}
-			public void setOrder(Collection<OrderDetails> order) {
-				this.order = order;
+			public void setBookCover(String bookCover) {
+				this.bookCover = bookCover;
+			}
+			public String getIsbn() {
+				return isbn;
+			}
+			public void setIsbn(String isbn) {
+				this.isbn = isbn;
+			}
+			public String getGenre() {
+				return genre;
+			}
+			public void setGenre(String genre) {
+				this.genre = genre;
+			}
+			public String getLanguage() {
+				return language;
+			}
+			public void setLanguage(String language) {
+				this.language = language;
+			}
+			public String getDescription() {
+				return description;
+			}
+			public void setDescription(String description) {
+				this.description = description;
 			}
 			
 			

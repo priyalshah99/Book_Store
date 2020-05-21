@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;book_webapp/dtbs.scripts/orderShippingDetails.txt&apos; to &apos;orderShippingDetails&apos;" description="Rename resource &apos;orderShippingDetails.txt&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="dtbs.scripts/orderShippingDetails.txt" name="orderShippingDetails" stamp="1589981635222" updateReferences="true"/>
+</session>

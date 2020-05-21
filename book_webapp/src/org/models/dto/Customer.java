@@ -1,15 +1,15 @@
 package org.models.dto;
 
-import java.util.Collection;
-
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
 public class Customer {
-	@Id
+	
+	private long custPhone;
 	private String custName;
+	@Id
 	private String email;
 	
 	@Embedded
@@ -37,6 +37,14 @@ public class Customer {
 
 	public void setAddress(Address address) {
 		this.address = address;
+	}
+
+	public long getCustPhone() {
+		return custPhone;
+	}
+
+	public void setCustPhone(long custPhone) {
+		this.custPhone = custPhone;
 	}
 
 	

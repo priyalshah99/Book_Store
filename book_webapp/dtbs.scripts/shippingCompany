@@ -1,0 +1,15 @@
+CREATE TABLE public.shippingcompany
+(
+    shippingcompanyname character varying(255) COLLATE pg_catalog."default" NOT NULL,
+    contactpersonemail character varying(255) COLLATE pg_catalog."default",
+    contactpersonname character varying(255) COLLATE pg_catalog."default",
+    contactpersonphone bigint NOT NULL,
+    CONSTRAINT shippingcompany_pkey PRIMARY KEY (shippingcompanyname)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.shippingcompany
+    OWNER to postgres;

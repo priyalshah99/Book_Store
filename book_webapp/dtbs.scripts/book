@@ -1,0 +1,19 @@
+CREATE TABLE public.book
+(
+    isbn character varying(255) COLLATE pg_catalog."default" NOT NULL,
+    authors character varying(255) COLLATE pg_catalog."default",
+    bookcover character varying(255) COLLATE pg_catalog."default",
+    price real NOT NULL,
+    publisher character varying(255) COLLATE pg_catalog."default",
+    stock integer NOT NULL,
+    title character varying(255) COLLATE pg_catalog."default",
+    year integer NOT NULL,
+    CONSTRAINT book_pkey PRIMARY KEY (isbn)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.book
+    OWNER to postgres;

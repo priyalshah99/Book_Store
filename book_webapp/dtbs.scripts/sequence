@@ -1,0 +1,6 @@
+CREATE SEQUENCE order_number_seq
+    INCREMENT 1
+    START 1
+    MINVALUE 1
+    MAXVALUE 9999999999
+    CACHE 1;

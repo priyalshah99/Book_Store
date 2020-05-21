@@ -1,0 +1,23 @@
+CREATE TABLE public.ordershippingdetails
+(
+    shippingcompanyname character varying COLLATE pg_catalog."default",
+    orderno integer NOT NULL,
+    deliverydate date,
+    shippingdate date,
+    CONSTRAINT ordershippingdetails_pkey PRIMARY KEY (orderno),
+    CONSTRAINT orderno FOREIGN KEY (orderno)
+        REFERENCES public.orderdetails (orderno) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION,
+    CONSTRAINT shippingcompany FOREIGN KEY (shippingcompanyname)
+        REFERENCES public.shippingcompany (shippingcompanyname) MATCH SIMPLE
+        ON UPDATE CASCADE
+        ON DELETE CASCADE
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.ordershippingdetails
+    OWNER to postgres;

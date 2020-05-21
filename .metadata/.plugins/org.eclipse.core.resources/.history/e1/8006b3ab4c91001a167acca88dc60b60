@@ -1,5 +1,0 @@
-package org.book_webapp.dto;
-
-public class BookDetails {
-
-}

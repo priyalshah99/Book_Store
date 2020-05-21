@@ -13,7 +13,7 @@ public class ShippingCompany {
 	@Id
 	private String shippingCompanyName;
 	private String contactPersonName;
-	private int contactPersonPhone;
+	private long contactPersonPhone;
 	private String contactPersonEmail;
 	
 	@OneToMany(mappedBy="sc")
@@ -33,10 +33,10 @@ public class ShippingCompany {
 	public void setContactPersonName(String contactPersonName) {
 		this.contactPersonName = contactPersonName;
 	}
-	public int getContactPersonPhone() {
+	public long getContactPersonPhone() {
 		return contactPersonPhone;
 	}
-	public void setContactPersonPhone(int contactPersonPhone) {
+	public void setContactPersonPhone(long contactPersonPhone) {
 		this.contactPersonPhone = contactPersonPhone;
 	}
 	public String getContactPersonEmail() {

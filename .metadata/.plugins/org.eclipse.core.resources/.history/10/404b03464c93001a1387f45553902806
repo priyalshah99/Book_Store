@@ -1,7 +1,0 @@
-package org.models.dto;
-
-public class Order {
-
-	private int orderNo;
-	private String custName;
-}
