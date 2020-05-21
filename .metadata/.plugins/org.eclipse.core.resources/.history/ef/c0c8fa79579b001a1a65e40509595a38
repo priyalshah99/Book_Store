@@ -123,21 +123,21 @@ public class HibernateTest {
 		session.save(o2);
 		
 		Book b1=new Book();
-		b1.setIsbn("1235647891428");
+		b1.setIsbn("12567");
 		b1.setTitle("stuart");
 		b1.setAuthors("jenish");
 		b1.setPrice(350);
 		b1.setStock(20);
 		
 		Book b2=new Book();
-		b2.setIsbn("7589694812973");
+		b2.setIsbn("567");
 		b2.setTitle("jerry");
 		b2.setAuthors("tom");
 		b2.setPrice(750);
 		b2.setStock(10);
 		
 		Book b3=new Book();
-		b3.setIsbn("7539584615876");
+		b3.setIsbn("5");
 		b3.setTitle("jack-jill");
 		b3.setAuthors("shaun");
 		b3.setPrice(750);

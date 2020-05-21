@@ -39,11 +39,11 @@ public class Customer {
 		this.address = address;
 	}
 
-	public String getCustPhone() {
+	public long getCustPhone() {
 		return custPhone;
 	}
 
-	public void setCustPhone(String custPhone) {
+	public void setCustPhone(long custPhone) {
 		this.custPhone = custPhone;
 	}
 

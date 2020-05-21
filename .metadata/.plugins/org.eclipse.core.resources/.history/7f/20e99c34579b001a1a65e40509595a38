@@ -33,10 +33,10 @@ public class ShippingCompany {
 	public void setContactPersonName(String contactPersonName) {
 		this.contactPersonName = contactPersonName;
 	}
-	public String getContactPersonPhone() {
+	public long getContactPersonPhone() {
 		return contactPersonPhone;
 	}
-	public void setContactPersonPhone(String contactPersonPhone) {
+	public void setContactPersonPhone(long contactPersonPhone) {
 		this.contactPersonPhone = contactPersonPhone;
 	}
 	public String getContactPersonEmail() {
